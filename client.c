@@ -6,7 +6,7 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 21:19:03 by knottey           #+#    #+#             */
-/*   Updated: 2023/06/08 03:50:22 by knottey          ###   ########.fr       */
+/*   Updated: 2023/06/21 16:56:17 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_send_bits(pid_t pid, char c)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(50);
+		usleep(100);
 		i++;
 	}
 }
@@ -49,5 +49,6 @@ int main(int argc, char *argv[])
 		ft_send_bits(pid, argv[2][idx]);
 		idx++;
 	}
+	ft_send_bits(pid, '\n');
 	return (0);
 }

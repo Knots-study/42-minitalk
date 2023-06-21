@@ -6,7 +6,7 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 21:19:00 by knottey           #+#    #+#             */
-/*   Updated: 2023/06/08 04:02:56 by knottey          ###   ########.fr       */
+/*   Updated: 2023/06/21 17:02:05 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,25 @@ void ft_handler(int signum)
 int main(int argc, char *argv[])
 {
 	pid_t	pid;
-	struct 	sigaction sigact;
+	struct 	sigaction sa;
 
 	if (argc != 1)
 	{
 		printf("\x1b[31mEnter ./server!\n\x1b[0m");
-		return (1);
+		return (0);
 	}
 	pid = getpid();
 	printf("PID = %d\n", pid);
-	sigact = (struct sigaction){0};
-	sigact.sa_handler = &ft_handler;
-	sigemptyset(&sigact.sa_mask);//エラーハンドリング必要
-    sigact.sa_flags = SA_SIGINFO;
+	sigemptyset(&sa.sa_mask);//エラーハンドリング必要
+	sa.sa_handler = ft_handler;
+	sa.sa_flags = 0;
 	while (argc == 1)
 	{
-		sigaction(SIGUSR1, &sigact, NULL);//エラーハンドリング必要
-		sigaction(SIGUSR2, &sigact, NULL);//エラーハンドリング必要
-		pause ();
+		sigaction(SIGUSR1, &sa, NULL);//エラーハンドリング必要
+		sigaction(SIGUSR2, &sa, NULL);//エラーハンドリング必要
+		// signal(SIGUSR1, ft_handler);
+		// signal(SIGUSR2, ft_handler);
+		// pause ();
 	}
 	return (0);
 }
