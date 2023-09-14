@@ -6,7 +6,7 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 21:19:00 by knottey           #+#    #+#             */
-/*   Updated: 2023/09/13 00:03:16 by knottey          ###   ########.fr       */
+/*   Updated: 2023/09/14 08:55:18 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	}
 	pid = getpid();
 	printf("PID = %d\n", pid);
-	if (sigemptyset(&sa.sa_mask) == -1)//エラーハンドリング
+	if (sigemptyset(&sa.sa_mask) == -1)
 	{
 		exit(1);
 	}
@@ -52,11 +52,11 @@ int main(int argc, char *argv[])
 		if (sigaction(SIGUSR1, &sa, NULL) == -1)
 		{
 			exit(1);
-		}//エラーハンドリング必要
+		}
 		if (sigaction(SIGUSR2, &sa, NULL) == -1)
 		{
 			exit(1);
-		}//エラーハンドリング必要
+		}
 	}
 	return (0);
 }
