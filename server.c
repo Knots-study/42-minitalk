@@ -6,7 +6,7 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 21:19:00 by knottey           #+#    #+#             */
-/*   Updated: 2023/09/16 12:46:07 by knottey          ###   ########.fr       */
+/*   Updated: 2023/09/16 13:48:06 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,20 @@ int	main(int argc, char *argv[])
 		ft_printf("\x1b[31mEnter ./server!\n\x1b[0m");
 		return (0);
 	}
-	pid = getpid();
-	ft_printf("PID = %d\n", pid);
-	if (sigemptyset(&sa.sa_mask) == -1)
-		exit(1);
-	sa.sa_handler = ft_handler;
-	sa.sa_flags = 0;
-	while (argc == 1)
+	else
 	{
+		pid = getpid();
+		ft_printf("PID = %d\n", pid);
+		if (sigemptyset(&sa.sa_mask) == -1)
+			exit(1);
+		sa.sa_handler = ft_handler;
+		sa.sa_flags = 0;
 		if (sigaction(SIGUSR1, &sa, NULL) == -1)
 			exit(1);
 		if (sigaction(SIGUSR2, &sa, NULL) == -1)
 			exit(1);
+		while (true)
+			pause();
 	}
 	return (0);
 }

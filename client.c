@@ -6,7 +6,7 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 21:19:03 by knottey           #+#    #+#             */
-/*   Updated: 2023/09/16 11:47:15 by knottey          ###   ########.fr       */
+/*   Updated: 2023/09/16 13:33:02 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	ft_send_bits(pid_t pid, char c)
 	i = 0;
 	while (i < 8)
 	{
+		usleep(100);
 		bit = c & (0x01 << i);
 		if (bit != 0)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(100);
 		i++;
 	}
 }

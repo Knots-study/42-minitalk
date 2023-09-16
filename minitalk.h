@@ -6,7 +6,7 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 23:31:07 by knottey           #+#    #+#             */
-/*   Updated: 2023/09/16 12:21:29 by knottey          ###   ########.fr       */
+/*   Updated: 2023/09/16 13:13:06 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <signal.h>
+# include <stdbool.h>
 # include "ft_printf.h"
 # include "libft.h"
 
