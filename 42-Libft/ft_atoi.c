@@ -6,33 +6,19 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 21:22:35 by knottey           #+#    #+#             */
-/*   Updated: 2023/06/18 11:58:58 by knottey          ###   ########.fr       */
+/*   Updated: 2023/09/16 14:50:43 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 21:22:35 by knottey           #+#    #+#             */
-/*   Updated: 2023/05/18 23:12:30 by knottey          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "libft.h"
-
-static int	ft_isspace(int c)
+int	ft_isspace(int c)
 {
 	return (c == '\t' || c == '\n' || c == '\v'
 		|| c == '\f' || c == '\r' || c == ' ');
 }
 
-static long long int	ft_space_sign(const char *str, const char **endptr)
+long long int	ft_space_sign(const char *str, const char **endptr)
 {
 	long long int	sign;
 

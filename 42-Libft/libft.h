@@ -25,6 +25,8 @@ typedef struct s_list
 }					t_list;
 
 int					ft_atoi(const char *str);
+int					ft_isspace(int c);
+long long int		ft_space_sign(const char *str, const char **endptr);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
 int					ft_isupper(int c);
@@ -44,6 +46,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+int					ft_read_number(const char *str, int *flag);
 char				**ft_split(char const *s, char c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strdup(const char *s1);
