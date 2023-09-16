@@ -6,7 +6,7 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 21:19:03 by knottey           #+#    #+#             */
-/*   Updated: 2023/09/16 15:01:23 by knottey          ###   ########.fr       */
+/*   Updated: 2023/09/16 15:21:55 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_send_bits(pid_t pid, char c)
 
 int	main(int argc, char *argv[])
 {
-	int		pid;
+	pid_t	pid;
 	int		flag;
 	size_t	idx;
 
