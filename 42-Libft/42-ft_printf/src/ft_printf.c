@@ -15,7 +15,7 @@
 static void	check_printf_flags(t_pformats *p_exf, const char **format)
 {
 	*p_exf = (t_pformats){0};
-	while (ft_strchr(PRINTF_FLAGS, **format))
+	while (ftp_strchr(PRINTF_FLAGS, **format))
 	{
 		if (**format == '-')
 			p_exf->left = 1;
@@ -110,7 +110,7 @@ int	ft_printf(const char *format, ...)
 			check_printf_flags(&p_exf, &format);
 			if (check_printf_width_prec(&p_exf, &format))
 				return (-1);
-			if (ft_strchr(MODIFIER, *format))
+			if (ftp_strchr(MODIFIER, *format))
 				p_len += select_conspec(*format, &args, p_exf);
 		}
 		else

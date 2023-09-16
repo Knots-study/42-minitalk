@@ -6,7 +6,7 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:08:06 by knottey           #+#    #+#             */
-/*   Updated: 2023/06/08 19:38:04 by knottey          ###   ########.fr       */
+/*   Updated: 2023/09/16 12:20:50 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ int			max_int(int a, int b);
 int			min_int(int a, int b);
 int			ft_putchar(unsigned char c);
 int			ft_putstr(const char *str, int times);
-int			ft_strlen(const char *s);
-char		*ft_strchr(const char *s, int c);
+int			ftp_strlen(const char *s);
+char		*ftp_strchr(const char *s, int c);
 int			repeat_char(int times, const char smth);
 int			ft_get_digit(long long int num);
 int			ft_putnbr(long long int num);

@@ -6,7 +6,7 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 21:19:03 by knottey           #+#    #+#             */
-/*   Updated: 2023/06/21 16:56:17 by knottey          ###   ########.fr       */
+/*   Updated: 2023/09/16 11:47:15 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_send_bits(pid_t pid, char c)
 	}
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int		pid;
 	size_t	idx;
@@ -39,11 +39,11 @@ int main(int argc, char *argv[])
 	idx = 0;
 	if (argc != 3)
 	{
-		printf("\x1b[31mEnter collect formats!\n\x1b[0m");
-		printf("\x1b[31mex)./client \"PID\" \"Message\" \n\x1b[0m");
+		ft_printf("\x1b[31mEnter collect formats!\n\x1b[0m");
+		ft_printf("\x1b[31mex)./client \"PID\" \"Message\" \n\x1b[0m");
 		return (1);
 	}
-	pid = atoi(argv[1]);
+	pid = ft_atoi(argv[1]);
 	while (argv[2][idx] != '\0')
 	{
 		ft_send_bits(pid, argv[2][idx]);

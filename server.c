@@ -6,13 +6,13 @@
 /*   By: knottey <Twitter:@knottey>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 21:19:00 by knottey           #+#    #+#             */
-/*   Updated: 2023/09/14 08:55:18 by knottey          ###   ########.fr       */
+/*   Updated: 2023/09/16 11:53:51 by knottey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void ft_handler(int signum)
+void	ft_handler(int signum)
 {
 	static int	bit;
 	static int	print_char;
@@ -22,25 +22,24 @@ void ft_handler(int signum)
 	bit++;
 	if (bit == 8)
 	{
-		printf("%c", print_char);
-		//何回も関数を呼び出すので、static変数にしないと毎回0に書き変わってしまう
+		ft_printf("%c", print_char);
 		bit = 0;
 		print_char = 0;
 	}
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	pid_t	pid;
-	struct 	sigaction sa;
+	pid_t				pid;
+	struct sigaction	sa;
 
 	if (argc != 1)
 	{
-		printf("\x1b[31mEnter ./server!\n\x1b[0m");
+		ft_printf("\x1b[31mEnter ./server!\n\x1b[0m");
 		return (0);
 	}
 	pid = getpid();
-	printf("PID = %d\n", pid);
+	ft_printf("PID = %d\n", pid);
 	if (sigemptyset(&sa.sa_mask) == -1)
 	{
 		exit(1);
